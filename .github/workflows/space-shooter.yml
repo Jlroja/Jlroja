@@ -6,11 +6,12 @@ on:
     - cron: "0 0 * * *"
   # Permite ejecutarlo a mano desde la pestaña Actions
   workflow_dispatch:
-  # Se ejecuta cada vez que cambias el workflow
+  # Se ejecuta cada vez que cambias el workflow o el script de meteoritos
   push:
     branches: [main]
     paths:
       - ".github/workflows/space-shooter.yml"
+      - "scripts/meteoritos.py"
 
 permissions:
   contents: write
@@ -21,18 +22,33 @@ jobs:
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 2 # necesario para que la acción reemplace el commit anterior y no llene el historial
 
-      - name: Crear la carpeta donde se guarda el GIF
-        run: mkdir -p assets
-
-      - name: Generar el GIF de la nave espacial
-        uses: czl9707/gh-space-shooter@v2
+      - name: Instalar Python
+        uses: actions/setup-python@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          username: Jlroja
-          output-path: assets/space-shooter.gif
-          strategy: random # opciones: random | column | row
-          fps: 30
-          commit-message: "🚀 Actualizar nave espacial de contribuciones"
+          python-version: "3.12"
+
+      - name: Instalar gh-space-shooter
+        run: pip install gh-space-shooter==2.0.5
+
+      - name: Generar el GIF (nave disparando a meteoritos)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p assets
+          python scripts/meteoritos.py Jlroja \
+            --output assets/space-shooter.gif \
+            --strategy random \
+            --fps 30
+
+      - name: Guardar el GIF en el repositorio
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/space-shooter.gif
+          if git diff --staged --quiet; then
+            echo "El GIF no cambió, no hay nada que guardar."
+          else
+            git commit -m "☄️ Actualizar nave y meteoritos"
+            git push
+          fi
