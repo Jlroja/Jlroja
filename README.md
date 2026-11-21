@@ -58,9 +58,8 @@ estado:    🟢 Abierto a oportunidades en desarrollo de software y datos
 
 ---
 
-## ☄️ Lluvia de meteoritos de contribuciones
+## Lluvia de contribuciones
 
-> Cada contribución es un meteorito ☄️. Entre más contribuciones tiene un día, más grande es la roca y más disparos aguanta. La nave 🚀 les dispara hasta destruirlos todos. Se actualiza sola todos los días con GitHub Actions.
 
 <p align="center">
   <img width="100%" src="./assets/space-shooter.gif" alt="Nave espacial disparándole a meteoritos de contribuciones"/>
