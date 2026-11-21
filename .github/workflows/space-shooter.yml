@@ -24,6 +24,9 @@ jobs:
         with:
           fetch-depth: 2 # necesario para que la acción reemplace el commit anterior y no llene el historial
 
+      - name: Crear la carpeta donde se guarda el GIF
+        run: mkdir -p assets
+
       - name: Generar el GIF de la nave espacial
         uses: czl9707/gh-space-shooter@v2
         with:
