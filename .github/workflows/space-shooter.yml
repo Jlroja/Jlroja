@@ -1,0 +1,35 @@
+name: 🚀 Nave espacial de contribuciones
+
+on:
+  # Se ejecuta todos los días a las 00:00 UTC (7:00 p.m. hora Colombia)
+  schedule:
+    - cron: "0 0 * * *"
+  # Permite ejecutarlo a mano desde la pestaña Actions
+  workflow_dispatch:
+  # Se ejecuta cada vez que cambias el workflow
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/space-shooter.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generar-nave:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2 # necesario para que la acción reemplace el commit anterior y no llene el historial
+
+      - name: Generar el GIF de la nave espacial
+        uses: czl9707/gh-space-shooter@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          username: Jlroja
+          output-path: assets/space-shooter.gif
+          strategy: random # opciones: random | column | row
+          fps: 30
+          commit-message: "🚀 Actualizar nave espacial de contribuciones"
