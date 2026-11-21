@@ -122,5 +122,5 @@ estado:    🟢 Abierto a oportunidades en desarrollo de software y datos
 
 <!-- ===================== PIE ===================== -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:1fb6ff,50:3b1d70,100:0b0f2a&section=footer" width="100%" alt="Pie"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:1fb6ff,50:3b1d70,100:0b0f2a&section=footer" width="100%" alt="Pie"/> 
 </p>
