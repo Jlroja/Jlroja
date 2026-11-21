@@ -1,4 +1,4 @@
-name: 🚀 Nave espacial de contribuciones
+name: 🤖 Robot y gólem de contribuciones
 
 on:
   # Se ejecuta todos los días a las 00:00 UTC (7:00 p.m. hora Colombia)
@@ -6,18 +6,18 @@ on:
     - cron: "0 0 * * *"
   # Permite ejecutarlo a mano desde la pestaña Actions
   workflow_dispatch:
-  # Se ejecuta cada vez que cambias el workflow o el script de meteoritos
+  # Se ejecuta cada vez que cambias el workflow o el juego
   push:
     branches: [main]
     paths:
       - ".github/workflows/space-shooter.yml"
-      - "scripts/meteoritos.py"
+      - "scripts/constructor_golem.py"
 
 permissions:
   contents: write
 
 jobs:
-  generar-nave:
+  generar-juego:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
@@ -28,27 +28,25 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Instalar gh-space-shooter
-        run: pip install gh-space-shooter==2.0.5
+      - name: Instalar dependencias
+        # gh-space-shooter se usa solo para descargar la gráfica de contribuciones
+        run: pip install gh-space-shooter==2.0.5 pillow
 
-      - name: Generar el GIF (nave disparando a meteoritos)
+      - name: Generar el GIF (robot constructor + gólem en pixel art)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p assets
-          python scripts/meteoritos.py Jlroja \
-            --output assets/space-shooter.gif \
-            --strategy random \
-            --fps 30
+          python scripts/constructor_golem.py Jlroja --output assets/constructor-golem.gif
 
       - name: Guardar el GIF en el repositorio
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/space-shooter.gif
+          git add assets/constructor-golem.gif
           if git diff --staged --quiet; then
             echo "El GIF no cambió, no hay nada que guardar."
           else
-            git commit -m "☄️ Actualizar nave y meteoritos"
+            git commit -m "🤖 Actualizar robot y gólem"
             git push
           fi

@@ -62,7 +62,7 @@ estado:    🟢 Abierto a oportunidades en desarrollo de software y datos
 
 
 <p align="center">
-  <img width="100%" src="./assets/space-shooter.gif" alt="Nave espacial disparándole a meteoritos de contribuciones"/>
+  <img width="100%" src="./assets/constructor-golem.gif" alt="Robot constructor y gólem de piedra destruyendo contribuciones en pixel art"/>
 </p>
 
 ---
