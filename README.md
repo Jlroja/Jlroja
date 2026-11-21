@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://linkedin.com/in/javierlasso"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/javier-andres-lasso-rojas-57a78a398/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <a href="mailto:jalasso2017@gmail.com"><img src="https://img.shields.io/badge/Email-1FB6FF?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
   <img src="https://komarev.com/ghpvc/?username=Jlroja&style=for-the-badge&color=3b1d70&label=VISITAS" alt="Visitas"/>
 </p>
