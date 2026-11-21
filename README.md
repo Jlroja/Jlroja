@@ -58,12 +58,12 @@ estado:    🟢 Abierto a oportunidades en desarrollo de software y datos
 
 ---
 
-## 🚀 Batalla espacial de contribuciones
+## ☄️ Lluvia de meteoritos de contribuciones
 
-> Cada cuadrito de mi gráfica de contribuciones es un enemigo. La nave los destruye uno a uno. Se actualiza solo todos los días con GitHub Actions.
+> Cada contribución es un meteorito ☄️. Entre más contribuciones tiene un día, más grande es la roca y más disparos aguanta. La nave 🚀 les dispara hasta destruirlos todos. Se actualiza sola todos los días con GitHub Actions.
 
 <p align="center">
-  <img width="100%" src="./assets/space-shooter.gif" alt="Nave espacial destruyendo contribuciones"/>
+  <img width="100%" src="./assets/space-shooter.gif" alt="Nave espacial disparándole a meteoritos de contribuciones"/>
 </p>
 
 ---
